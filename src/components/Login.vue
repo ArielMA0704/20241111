@@ -3,7 +3,7 @@
     <div class="login-container">
       <div class="login-box">
         <div class="back-button">
-          <button @click="goBack">←</button>
+          <button @click="goBack">✕</button>
         </div>
         <h1 class="login-title">歡迎登入</h1>
 
@@ -12,9 +12,9 @@
             <div id="g_id_signin" v-if="showSSO"></div>
           </div>
 
-          <button class="login-btn Apple-btn" @click="AppleSignIn">
+          <!--<button class="login-btn Apple-btn" @click="AppleSignIn">
             透過Apple帳戶登入
-          </button>
+          </button>-->
         </div>
 
         <q-page-sticky position="top-right" :offset="[18, 18]">
@@ -35,12 +35,23 @@ import { useRouter } from "vue-router";
 
 export default defineComponent({
   name: "LoginView",
+  props: {
+    visible: {
+      type: Boolean,
+      default: false,
+    },
+  },
+
+  emits: ["close", "login-success"],
 
   setup(props, { emit }) {
     const $q = useQuasar();
     const router = useRouter();
     const showSSO = ref(true);
     const loginStore = useLoginStore();
+    const handleClose = () => {
+      emit("close"); // 觸發關閉事件
+    };
 
     const goBack = () => {
       emit("close");
@@ -169,6 +180,7 @@ export default defineComponent({
       showSSO,
       goBack,
       AppleSignIn,
+      handleClose,
     };
   },
 });
@@ -195,9 +207,9 @@ export default defineComponent({
   background-color: #f5f5f5;
   border-radius: 12px;
   width: 90%;
-  max-width: 800px;
-  height: 60vh;
-  min-height: 400px;
+  max-width: 600px;
+  height: 30vh;
+  min-height: 200px;
 }
 
 .login-box {
@@ -216,7 +228,10 @@ export default defineComponent({
 .back-button {
   position: absolute;
   top: 2rem;
-  left: 2rem;
+  right: 2rem;
+}
+.back-button :hover {
+  color: #333;
 }
 
 .back-button button {
@@ -289,6 +304,7 @@ export default defineComponent({
   flex-direction: column;
   gap: 2rem;
   width: 100%;
+  justify-content: center;
 }
 
 .login-btn {

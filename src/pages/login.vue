@@ -164,10 +164,6 @@
         </div>
       </div>
     </section>
-
-    <q-page-sticky position="top-right" :offset="[18, 18]">
-      <div id="loginPage" />
-    </q-page-sticky>
   </q-page>
   <FooterComp class="footer-container" />
   <LoginView
@@ -203,7 +199,7 @@ export default defineComponent({
     const loginStore = useLoginStore();
     const { t, locale } = useI18n();
     const goToPage = () => {
-      router.push("/login"); // 如果你想用路由跳轉
+      router.push("/service"); // 如果你想用路由跳轉
     };
 
     const toggleLanguage = () => {
@@ -228,7 +224,7 @@ export default defineComponent({
         description: t("提供專業的醫療諮詢與建議"),
       },
       {
-        url: "/hospital-room-interior.jpg",
+        url: "/images/hospital-room-interior.jpg",
         title: t("完整紀錄"),
         description: t("詳實的醫療記錄管理系統"),
       },
@@ -547,11 +543,13 @@ export default defineComponent({
 
 .yellow-underline {
   width: 500px;
-  height: 3px;
+  height: 6px;
   background-color: #ffe66d;
-  margin: 10px 0 20px 0;
+  margin: 0px 0 20px 0;
   transition: width 0.3s ease;
   text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* 添加手機相關樣式 */
@@ -934,6 +932,9 @@ export default defineComponent({
   .phone-container {
     margin: 40px auto;
     transform: scale(0.8);
+  }
+  .doctor-image {
+    width: 100%;
   }
 }
 </style>

@@ -108,14 +108,14 @@ export default {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 6rem;
+  gap: 18rem;
 }
 
 .brand-title {
   color: #ffe66d;
   font-size: 36px;
   margin: 0;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   margin-bottom: 0.5rem;
   transition: transform 0.3s ease;
   font-weight: bold;
@@ -220,11 +220,11 @@ export default {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateX(-20px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
