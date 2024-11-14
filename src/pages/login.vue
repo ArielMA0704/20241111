@@ -159,7 +159,7 @@
           <div class="overlay">
             <span class="material-symbols-outlined icon">info</span>
             <!-- 使用正確的圖標名稱 -->
-            <span class="iconTitle">{{ t("其他服務") }}</span>
+            <span class="iconTitle">{{ t("AI醫檢助手") }}</span>
           </div>
         </div>
       </div>
@@ -389,7 +389,6 @@ export default defineComponent({
   padding: 20px;
   overflow: hidden;
   background-color: #f5f5f5;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -733,7 +732,7 @@ export default defineComponent({
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 使用三列的網格 */
   gap: 1.5rem;
-  max-width: 1200px; /* 可根據需要調整最大寬度 */
+  max-width: 1000px; /* 可根據需要調整最大寬度 */
   width: 100%;
   justify-self: center;
 }
@@ -881,10 +880,43 @@ export default defineComponent({
     transform: translateX(0);
   }
 }
+@media (max-width: 1024px) {
+  .services-section {
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .doctor-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 1000px;
+    width: 90%; /* 控制整體寬度 */
+    margin: 0 auto; /* 水平置中 */
+  }
+
+  /* 針對每個醫生卡片的容器 */
+  .doctor-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* 針對醫生照片 */
+  .doctor-image {
+    width: 100%; /* 或設定特定最大寬度 */
+    max-width: 300px; /* 控制照片最大寬度 */
+    height: auto;
+    margin: 0 auto; /* 確保圖片置中 */
+  }
+}
 @media (max-width: 768px) {
   .image-row {
     height: 300px;
+    margin-bottom: 0;
   }
 
   .image-title {
@@ -935,6 +967,84 @@ export default defineComponent({
   }
   .doctor-image {
     width: 100%;
+  }
+  .doctor-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 使用三列的網格 */
+    gap: 1.5rem;
+    max-width: 1000px; /* 可根據需要調整最大寬度 */
+    width: 100%;
+    justify-self: center;
+  }
+  .iconTitle {
+    font-size: 16px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+  }
+  .slogan {
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    line-height: 1.8;
+    align-items: center;
+  }
+  .ai-content {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    flex: 1;
+    background: linear-gradient(135deg, #8cd7d7 0%, #166868 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-left: 30px;
+  }
+  .yellow-line-2 {
+    width: 100%;
+    height: 4px;
+    background-color: #ffe66d;
+    margin-bottom: 20px;
+  }
+  .ai-title {
+    font-size: 24pxpx;
+  }
+  .feature-item {
+    font-size: 20px;
+  }
+  .ai-image {
+    width: 200%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  .ai-section {
+    padding: 20px;
+    position: center;
+  }
+  .yellow-underline {
+    width: 100%;
+    height: 6px;
+    background-color: #ffe66d;
+    margin: 0px 0 0px 0;
+    transition: width 0.3s ease;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .experience-button {
+    font-size: 16px;
+    width: 200px;
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: center;
+  }
+  .login-buttons {
+    justify-content: center;
+    align-items: center;
   }
 }
 </style>

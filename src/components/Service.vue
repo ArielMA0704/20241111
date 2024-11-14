@@ -159,7 +159,7 @@
             <p class="answer-box">建立良好衛教觀念</p>
           </div>
           <div class="answer-image">
-            <img src="/images/Group 23.png" alt="answer" />
+            <img src="/images/Group 23.png" alt="answer" class="medbobi-help" />
           </div>
         </div>
       </div>
@@ -568,11 +568,11 @@ defineOptions({
   background-color: white;
   padding: 20px;
   border-radius: 15px;
-  height: 1600px;
+  height: 1400px;
   width: 1200px;
   display: flex;
   flex-direction: column;
-  margin: 20px 0 120px 0;
+  margin: 20px 0 20px 0;
 }
 
 .question-image {
@@ -629,16 +629,307 @@ defineOptions({
   transform: translateX(10px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
-@media (max-width: 768px) {
-  .yellowBoxImag {
-    width: 500px;
-    height: 500px;
+@media (max-width: 1024px) {
+  .background {
+    width: 100%;
+    padding: 1rem;
+    margin: 0 0 10 10;
+  }
+  .box,
+  .box2,
+  .whitebackground,
+  .background,
+  .whitebackground-5 {
+    width: 100%;
+    padding: 1rem;
+  }
+  .process-title {
+    justify-content: center;
+    text-align: center;
+  }
+  .yellow-bg,
+  .yellow-bg1 {
+    height: auto;
+    padding: 2rem 1rem;
   }
 
-  .yellow-bg {
+  .box {
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .yellow-text {
+    font-size: 20px;
+    text-align: left;
+  }
+
+  .yellowLine {
+    width: 80%;
+    margin: 1rem auto;
+  }
+
+  .yellowBoxImag,
+  .yellowBoxImag1 {
+    width: 80%;
+    height: auto;
+    max-width: 500px;
+  }
+
+  .half-width {
+    gap: 2rem;
+  }
+
+  .layout-container {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .dialog-group {
+    width: 100%;
+  }
+  .img1 {
+    width: 100%;
+  }
+  .img {
+    width: 80%;
+  }
+  .dialog-section {
+    width: 100%;
+    padding: 0.5rem;
+    gap: 1rem;
+  }
+
+  .dialog-group {
+    width: 100%;
+    max-width: 450px;
+  }
+
+  .conversation-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .dialog-box {
+    padding: 12px;
+    margin-bottom: 8px;
+  }
+
+  .typing {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .layout-container {
+    height: auto;
+    padding: 1.5rem;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .feature-image {
+    height: 100px;
+    margin-bottom: 1rem;
+  }
+  .medbobi-help {
+    width: 80%;
+    align-items: right;
+  }
+  .whitebackground-5 {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    height: 1400px;
+    width: 1200px;
+    display: flex;
     flex-direction: column;
-    height: 1000px;
+    margin: 20px 0 20px 0;
+  }
+  .answer-text {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .yellow-bg,
+  .yellow-bg1 {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .question-image {
+    width: 90%;
+    max-width: 500px;
+    margin: 1rem auto;
+  }
+  .answer-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .answer-text {
+    width: 100%;
+    align-items: center;
+  }
+  .process-title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .yellow-text {
+    font-size: 16px;
+    padding: 0 1rem;
+  }
+  .yellowBoxImag,
+  .yellowBoxImag1 {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 0 auto;
+  }
+  .yellowLine {
+    width: 60%;
+    margin: 0.5rem auto 1.5rem;
+  }
+  /* 護理紀錄區塊 */
+  .greenbackground {
+    height: auto;
+    padding: 2rem 0;
+  }
+
+  .half-width {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .gray-bg {
+    width: 50%;
+    height: 300px;
+    margin: 0 auto;
+  }
+  .grayBox {
+    top: auto;
+    bottom: 0;
+    height: 50px;
+    font-size: 1.1rem;
+    width: 100%;
+  }
+  /* 會議記錄區塊 */
+  .whitebackground {
+    flex-direction: column;
+    align-items: center;
+  }
+  .img1 {
+    display: none; /* 隱藏圖片 */
+  }
+  .promtingtext {
+    font-size: 16px;
+    text-align: center;
+    padding: 1rem;
+  }
+  .promtingtext ul {
+    padding: 0; /* 移除 ul 的預設 padding */
+    list-style: none; /* 移除項目符號 */
+  }
+  .feature-image {
+    height: 80px;
+  }
+  .typing {
+    font-size: 12px;
+  }
+  .content-layout {
+    gap: 1rem;
+  }
+  .description-4 {
+    font-size: 14px;
+    height: auto;
+    padding: 1rem;
+  }
+  .feature-item {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+  .answer-container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  .layout-container {
+    width: 90%;
+    padding: 1.5rem;
+    margin: 0 auto;
+  }
+
+  .dialog-section {
+    padding: 0;
+  }
+  .dialog-group {
+    width: 100%;
+  }
+  .dialog-box {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  .typing {
+    font-size: 14px;
+    white-space: normal;
+    line-height: 1.5;
+  }
+
+  .conversation-title {
+    font-size: 18px;
+    text-align: center;
+  }
+  .answer-text {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  /* 住院摘要區塊 */
+  .background {
+    height: auto;
+    min-height: 600px;
+    margin: 1rem;
+    width: 90%; /* 不要填滿整個寬度 */
+  }
+  .description-4 {
+    font-size: 15px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    width: 90%;
+    margin: 1rem auto;
+  }
+  .feature-list {
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  .feature-item {
+    text-align: center;
+    font-size: 15px;
+    padding: 0.8rem 1rem;
+  }
+  .content-layout {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .answer-box {
+    width: 180px;
+    height: 40px;
+    font-size: 16px;
+  }
+  .answer-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+  }
+
+  .question-image img,
+  .answer-image img {
+    max-width: 100%;
+  }
+  .dialog-section {
+    width: 100%;
+    padding: 1rem;
   }
 
   .half-width {
@@ -666,7 +957,11 @@ defineOptions({
   .title {
     font-size: 24px;
   }
-
+  /* 阿茲海默症衛教區塊 */
+  .whitebackground-5 {
+    height: auto;
+    padding: 2rem 1rem;
+  }
   .feature-item {
     font-size: 16px;
     padding: 12px 20px;
@@ -694,11 +989,77 @@ defineOptions({
   transform: scale(1.05);
   transition: transform 0.3s ease;
 }
+.medbobi-help {
+  width: 50%; /* 調整寬度 */
+  max-width: 350px; /* 設定最大寬度 */
+  height: auto;
+  margin: 0 auto;
+  display: block; /* 確保置中 */
+}
 
 @media (max-width: 480px) {
   .yellowBoxImag {
-    width: 100px;
-    height: 100px;
+    display: none;
+  }
+  /* AI醫護助手圖片調整 */
+  .yellowBoxImag1 {
+    width: 100%;
+    height: 300;
+    max-width: 300px;
+  }
+  .box {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .left-section-4 {
+    width: 100%;
+    padding: 0rem;
+  }
+  .right-section-4 {
+    width: 100%;
+    padding: 0rem;
+  }
+  .description-4 {
+    padding: 0.5rem;
+    margin: auto;
+  }
+  .feature-list {
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+  }
+  .feature-item {
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+  }
+  .medbobi-help {
+    width: 90%;
+    max-width: 200px; /* 更小的最大寬度 */
+    height: auto;
+    margin: 2rem auto; /* 增加上下邊距 */
+    display: block;
+  }
+  .answer-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem; /* 加入左右間距 */
+  }
+  .question-image {
+    width: 90%;
+    max-width: 350px;
+    margin: 1rem auto;
+  }
+  /* 確保容器不會爆版 */
+  .whitebackground-5 {
+    width: 100%;
+    padding: 1rem;
+    height: auto;
+    margin: 1rem 0;
+  }
+  .answer-container {
+    margin-top: 1rem;
+    gap: 1rem;
   }
 }
 </style>

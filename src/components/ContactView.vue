@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page class="bg">
     <div class="background">
       <q-card class="my-card">
         <q-card-section>
@@ -99,5 +99,68 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+/* 響應式設計 */
+@media screen and (max-width: 600px) {
+  .background {
+    padding: 0.5rem;
+    align-items: flex-start;
+    min-height: 80vh; /* 手機版縮短高度 */
+  }
+
+  .my-card {
+    margin: 0.5rem;
+    border-radius: 8px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form {
+    padding: 0;
+    width: 100%;
+  }
+
+  .q-input {
+    margin-bottom: 1rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+/* 更小螢幕的適配 */
+@media screen and (max-width: 320px) {
+  .background {
+    min-height: 70vh; /* 更小螢幕進一步縮短 */
+    padding: 1rem 0.25rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .my-card {
+    width: 100%;
+    max-width: 600px;
+    margin: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* 如果內容過長可以滾動 */
+  }
+}
+@media screen and (max-height: 600px) {
+  .background {
+    min-height: auto; /* 在較矮的螢幕上自適應高度 */
+    padding: 1rem 0.5rem;
+  }
+
+  .my-card {
+    margin: 0.5rem;
+  }
 }
 </style>

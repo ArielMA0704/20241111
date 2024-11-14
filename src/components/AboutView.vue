@@ -652,6 +652,36 @@ export default defineComponent({
 
 /* 響應式設計 */
 @media (max-width: 768px) {
+  .ai-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+  }
+  .ai-image-container {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  .ai-image {
+    width: 100%;
+    max-width: 500px;
+  }
+  .feature-item {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+  }
+  .ai-title {
+    font-size: 24px;
+  }
+  .ai-content {
+    width: 100%;
+    max-width: 500px;
+    margin: 0;
+    margin-top: 20px;
+  }
   .doctor-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -674,6 +704,18 @@ export default defineComponent({
 
   .image-item.expanded {
     flex: 2;
+  }
+
+  .ai-image-container {
+    flex: 1;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ai-image {
+    width: 150%;
   }
 
   /* 關於我們 */
@@ -712,9 +754,39 @@ export default defineComponent({
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 425px) {
   .doctor-grid {
     grid-template-columns: 1fr;
+  }
+  .ai-image {
+    width: 100%;
+    max-width: 380px;
+  }
+  .ai-section {
+    padding: 10px;
+  }
+  .ai-image-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .ai-content {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+    margin: 20px auto 0;
+  }
+
+  .feature-item {
+    font-size: 14px;
+  }
+
+  .ai-title {
+    font-size: 20px;
+  }
+
+  .yellow-line-2 {
+    width: 200px;
+    margin-bottom: 15px;
   }
 }
 </style>

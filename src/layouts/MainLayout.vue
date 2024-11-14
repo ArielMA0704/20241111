@@ -134,23 +134,57 @@
     <!-- Mobile Navigation Drawer -->
     <q-drawer v-model="drawerRight" side="right" bordered>
       <q-list>
-        <q-expansion-item
-          v-for="item in navItems"
-          :key="item.title"
-          :label="item.title"
-          :caption="item.subItems ? '展開子選單' : ''"
-        >
-          <q-list v-if="item.subItems">
-            <q-item
-              v-for="subItem in item.subItems"
-              :key="subItem.title"
-              clickable
-              @click="navigate(subItem.link)"
-            >
-              <q-item-section>{{ subItem.title }}</q-item-section>
-            </q-item>
-          </q-list>
-        </q-expansion-item>
+        <q-separator />
+        <!-- 針對不同項目使用不同的渲染邏輯 -->
+        <template v-for="item in navItems" :key="item.title">
+          <!-- 首頁和聯絡我們使用一般項目 -->
+          <q-item
+            v-if="['首頁', '聯絡我們'].includes(item.title)"
+            clickable
+            @click="navigate(item.link)"
+          >
+            <q-item-section>{{ item.title }}</q-item-section>
+          </q-item>
+
+          <!-- 其他項目保持展開功能 -->
+          <q-expansion-item
+            v-else
+            :label="item.title"
+            :caption="item.subItems ? '展開子選單' : ''"
+            @click="item.link && navigate(item.link)"
+            clickable
+          >
+            <q-list v-if="item.subItems">
+              <q-item
+                v-for="subItem in item.subItems"
+                :key="subItem.title"
+                clickable
+                @click="navigate(subItem.link)"
+              >
+                <q-item-section>{{ subItem.title }}</q-item-section>
+              </q-item>
+            </q-list>
+          </q-expansion-item>
+        </template>
+        <q-item>
+          <q-item-section>
+            <q-btn-dropdown flat :label="selectedLanguage" class="full-width">
+              <q-list class="dropdown-menu1">
+                <q-item
+                  v-for="lang in languages"
+                  :key="lang.code"
+                  clickable
+                  v-close-popup
+                  @click="selectLanguage(lang)"
+                >
+                  <q-item-section>
+                    <q-item-label>{{ lang.name }}</q-item-label>
+                  </q-item-section>
+                </q-item>
+              </q-list>
+            </q-btn-dropdown>
+          </q-item-section>
+        </q-item>
       </q-list>
     </q-drawer>
 
@@ -721,6 +755,7 @@ export default defineComponent({
 @media (max-width: 1023px) {
   .nav-buttons {
     display: none;
+    font-size: 14px;
   }
 }
 /* 動畫效果 */
@@ -748,5 +783,50 @@ export default defineComponent({
 .q-menu--transition-jump-up-leave-to {
   opacity: 0;
   transform: translateY(10px) scaleY(0.95);
+}
+
+@media (max-width: 768px) {
+  .right-actions {
+    display: flex;
+    align-items: center;
+    gap: 0rem;
+    flex-shrink: 0;
+  }
+  .toolbar-container {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    padding: 0 25px;
+  }
+  .brand {
+    font-size: auto;
+    font-weight: bold;
+  }
+  .q-btn-dropdown {
+    font-size: 14px;
+  }
+
+  /* 隱藏導航欄上的語言選擇 */
+  .right-actions .q-btn-dropdown {
+    display: none;
+  }
+}
+@media (max-width: 425px) {
+  .right-actions {
+    display: flex;
+    align-items: center;
+    gap: 0rem;
+    flex-shrink: 0;
+  }
+  .toolbar-container {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    padding: 0 25px;
+  }
+  .brand {
+    font-size: 20px;
+    font-weight: bold;
+  }
 }
 </style>
