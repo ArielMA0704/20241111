@@ -8,6 +8,7 @@ const routes = [
         path: "scene",
         component: () => import("pages/scene.vue"),
       },
+
       {
         path: "project/ADHealthEducation",
         component: () => import("pages/ADHealthEducationPage.vue"),
@@ -49,6 +50,17 @@ const routes = [
         path: "/components/login",
         name: "login",
         component: () => import("components/Login.vue"),
+      },
+      { path: "service", component: () => import("../components/Service.vue") },
+      {
+        path: "about",
+        name: "about",
+        component: () => import("../components/AboutView.vue"),
+      },
+      {
+        path: "contact",
+        name: "contact",
+        component: () => import("../components/ContactView.vue"),
       },
     ],
   },

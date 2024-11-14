@@ -1,0 +1,461 @@
+/* 1.門診紀錄 */
+.service-process {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  width: 1200px;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.process-item {
+  width: 100%;
+  overflow: hidden;
+}
+
+.process-content {
+  padding: 2rem;
+  min-height: 200px;
+}
+
+.process-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: rgba(22, 104, 104, 1);
+  font-weight: bold;
+}
+
+.ulText {
+  font-weight: bold;
+}
+
+.yellow-bg {
+  width: 100%;
+  height: 712px;
+  background: linear-gradient(to right, #8cd7d7, white);
+  min-height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.yellow-text {
+  font-size: 24px;
+}
+
+.yellowBoxImag {
+  width: 600px;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 15px;
+  aspect-ratio: 1;
+}
+
+.yellowBoxImag img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.yellowLine {
+  border: none;
+  height: 5px;
+  background-color: rgba(255, 230, 109, 1);
+  width: 30rem;
+  margin-left: 0;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+/* 2.護理紀錄 */
+.greenbackground {
+  background-color: #eafcfc;
+  width: 100%;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+}
+
+.box2 {
+  width: 1200px;
+  padding: 10px;
+}
+
+.half-width {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.gray-bg {
+  height: 500px;
+  overflow: hidden;
+  border-radius: 15px;
+  aspect-ratio: 1;
+  position: relative;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gray-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grayBox {
+  z-index: 1;
+  position: absolute;
+  top: 400px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 230, 109, 0.6);
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-weight: 800;
+  font-size: 1.25rem;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+.gray-bg:hover .grayBox {
+  background-color: rgba(255, 230, 109, 1);
+}
+
+/* 3.會議紀錄 */
+.whitebackground {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  padding: 20px;
+  width: 1200px;
+}
+
+/* 左側區塊樣式 */
+.left-section-3 {
+  display: flex;
+  justify-content: center;
+}
+
+.meetingtitle {
+  width: 100%;
+  font-size: 30px;
+  font-weight: bold;
+  color: #166868;
+  border-bottom: 7px solid #ffe66d;
+  margin-bottom: 20px;
+}
+.promtingtext {
+  font-size: 20px;
+  font-weight: 800;
+  width: 100%;
+  color: #000;
+  line-height: 1.6;
+  margin: 0px;
+}
+
+.img1 {
+  width: 550px;
+  height: auto;
+}
+
+/* 右側區塊樣式 */
+.right-section-3 {
+  display: flex;
+  align-items: center;
+}
+
+.layout-container {
+  background-color: #8cd7d7;
+  border-radius: 15px;
+  padding: 20px;
+  height: 480px;
+  width: 570px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.voice-image-container {
+  width: 30%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-image {
+  height: 120px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.dialog-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dialog-group {
+  width: 500px;
+}
+
+.conversation-title {
+  font-size: 20px;
+  color: #166868;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.dialog-box {
+  background-color: rgba(255, 255, 255, 0.8); /* 0.5 為 50% 透明度 */
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  overflow: hidden; /* 防止打字效果溢出 */
+}
+
+.typing {
+  width: 100%;
+  white-space: nowrap; /* 防止文字換行 */
+  overflow: hidden;
+  border-right: 1px solid transparent;
+  animation: typing 2s steps(30, end), blink-caret 0.75s step-end infinite;
+  font-family: Consolas, Monaco;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: currentColor;
+  }
+}
+
+/* 4.住院摘要 */
+.background {
+  background-image: url("/images/hospital-room-interior.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 1200px;
+  height: 600px;
+  padding: 20px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.content-layout {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  gap: 40px;
+}
+
+.left-section-4 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.right-section-4 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.description-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+  line-height: 2.5;
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  height: 300px;
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+.feature-item {
+  background-color: rgba(253, 144, 132, 1);
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-size: 18px;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+
+.feature-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 5.阿茲海默症衛教 */
+.whitebackground-5 {
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  height: 1600px;
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0 120px 0;
+}
+
+.question-image {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.question-image img {
+  max-width: 1000px;
+}
+
+.answer-image img {
+  max-width: 800px;
+}
+
+.answer-image img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.answer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.answer-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 50px;
+}
+
+.answer-box {
+  background-color: rgba(253, 144, 132, 1);
+  width: 220px;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.answer-box:hover {
+  transform: translateX(10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .yellowBoxImag {
+    width: 500px;
+    height: 500px;
+  }
+
+  .yellow-bg {
+    flex-direction: column;
+    height: 1000px;
+  }
+
+  .half-width {
+    grid-template-columns: 1fr;
+  }
+
+  .process-group {
+    grid-template-columns: 1fr;
+  }
+
+  .process-images {
+    grid-template-columns: 1fr;
+  }
+
+  .content-layout {
+    flex-direction: column;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .feature-item {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+
+  .greenbackground {
+    flex-direction: column;
+  }
+
+  .left-section-3,
+  .right-section-3 {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .yellowBoxImag {
+    width: 100px;
+    height: 100px;
+  }
+}

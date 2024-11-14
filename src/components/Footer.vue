@@ -55,7 +55,7 @@
           <li>會議紀錄</li>
           <li>住院摘要</li>
           <li>阿茲海默症衛教</li>
-          <li>使用者自訂</li>
+          <li>AI醫檢助手</li>
         </ul>
       </div>
     </div>
@@ -98,7 +98,6 @@ export default {
   background-color: #19867e;
   color: white;
   padding: 4rem 2rem;
-  margin-top: 6rem;
   position: relative;
   overflow: hidden;
 }
@@ -108,14 +107,14 @@ export default {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 6rem;
+  gap: 18rem;
 }
 
 .brand-title {
   color: #ffe66d;
   font-size: 36px;
   margin: 0;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   margin-bottom: 0.5rem;
   transition: transform 0.3s ease;
   font-weight: bold;
@@ -220,11 +219,11 @@ export default {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateX(-20px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
@@ -241,8 +240,15 @@ export default {
 
 /* 響應式設計 */
 @media (max-width: 1024px) {
+  .footer {
+    background-color: #19867e;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
   .footer-section {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
   .footer-brand {
@@ -251,13 +257,59 @@ export default {
   }
 
   .yellow-underline {
-    margin: 10px auto 20px auto;
+    margin: 10px auto 10px auto;
+    width: 80%;
+  }
+  .location-card {
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    font-size: 18px;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .footer-section {
+    margin: 0 0;
+  }
+  .section-title {
+    font-size: 22px; /* 縮小區塊標題 */
+    margin-top: 1rem; /* 縮小上方間距 */
+    margin-bottom: 0.3rem;
+    text-align: center;
+  }
+  .services-list {
+    text-align: center;
   }
 }
 
 @media (max-width: 768px) {
+  .footer {
+    background-color: #19867e;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 1rem; /* 縮小整體 padding */
+  }
   .footer-section {
     grid-template-columns: 1fr;
+    gap: 1.5rem; /* 縮小區塊間距 */
+    margin: 0;
+  }
+
+  .brand-title {
+    font-size: 28px; /* 縮小品牌標題 */
+    margin-top: 0.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .subtitle {
+    font-size: 1rem; /* 縮小副標題 */
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-size: 18px; /* 縮小區塊標題 */
+    margin-top: 1rem; /* 縮小上方間距 */
+    margin-bottom: 0.3rem;
   }
 
   .footer-brand {
@@ -270,7 +322,9 @@ export default {
   }
 
   .yellow-underline {
-    margin: 10px auto 20px auto;
+    margin: 5px auto 10px auto;
+    width: 60%; /* 縮短黃線寬度 */
+    height: 2px; /* 縮小黃線高度 */
   }
 
   .contact-item {
@@ -279,6 +333,82 @@ export default {
 
   .services-list li {
     text-align: center;
+  }
+  .contact-info {
+    gap: 0.5rem; /* 縮小聯絡資訊間距 */
+    margin-top: 0.5rem;
+  }
+  .contact-item {
+    justify-content: center;
+    font-size: 14px; /* 縮小聯絡資訊字體 */
+    gap: 5px; /* 縮小圖標和文字間距 */
+  }
+
+  .location-card {
+    font-size: 14px; /* 縮小位置卡片字體 */
+    margin-bottom: 0.8rem; /* 縮小卡片間距 */
+    padding: 0.3rem; /* 添加內部間距 */
+  }
+
+  .location-card p {
+    margin: 0.2rem 0; /* 縮小段落間距 */
+  }
+
+  /* 移除多餘的換行 */
+  br {
+    display: none;
+  }
+
+  .services-list {
+    font-size: 14px; /* 縮小服務列表字體 */
+    margin-top: 0.5rem;
+  }
+
+  .services-list li {
+    padding: 0.4rem 0; /* 縮小列表項目間距 */
+    text-align: center;
+  }
+
+  /* 調整動畫效果 */
+  .footer-location,
+  .footer-services {
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+
+  /* 優化 hover 效果 */
+  .contact-item:hover,
+  .location-card:hover,
+  .services-list li:hover {
+    transform: translateX(5px); /* 縮小懸停效果的位移 */
+  }
+}
+/* 更小螢幕的優化 */
+@media (max-width: 425px) {
+  .footer {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .footer-section {
+    gap: 1rem;
+  }
+
+  .brand-title {
+    font-size: 24px;
+  }
+
+  .section-title {
+    font-size: 16px;
+  }
+
+  .contact-item,
+  .location-card,
+  .services-list {
+    font-size: 13px;
+  }
+
+  .yellow-underline {
+    width: 50%;
   }
 }
 </style>
